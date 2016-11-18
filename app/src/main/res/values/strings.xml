@@ -6,16 +6,36 @@
     <string name="web">WEB</string>
     <string name="record">RECORD</string>
     <string name="summary">SUMM.</string>
-    <string name="instructions">INSTR.</string>
-    <string name="title_activity_inst">InstActivity</string>
-    <string name="about_paragraph">Welcome to Betta Sleep! This app records ECG from your corresponding Betta Biosensor, including OSH Park circuit and BLE functionality.</string>
+    <string name="instructions">HOW TO</string>
+    <string name="title_activity_inst">Instructions</string>
+    <string name="about_paragraph">Welcome to Betta Sleep!\n\n
+        This app records ECG from your corresponding Betta Biosensor, including OSH Park circuit and BLE functionality.\n\n
+        1. Put the sensor on.\n\n
+        2. Pair this app with your sensor.\n\n
+        3. In the <b>Record</b> menu, click the <b>Record</b> button.\n
+        You can view the streaming data in the graph.\n\n
+        4. After each recording, you can view a Summary on how you slept by selecting the <b>Summ.</b> button.\n\n </string>
     <string name="about">About</string>
-    <string name="title_activity_record">RecordActivity</string>
-    <string name="title_activity_summ">SummActivity</string>
-    <string name="title_activity_web">WebActivity</string>
+    <string name="title_activity_record">Record</string>
+    <string name="title_activity_summ">Summary</string>
+    <string name="title_activity_web">Web</string>
     <string name="login">Login</string>
     <string name="username">username</string>
     <string name="password">password</string>
     <string name="enter">Enter</string>
+    <string name="sleep_well">Sleep well?</string>
+    <string name="sleep_well_summ">Sleep well?</string>
+    <string name="quality">Quality</string>
+    <string name="time_in_rem">Time in REM</string>
+    <string name="deep_sleep">Deep Sleep</string>
+    <string name="light_sleep">Light Sleep</string>
+    <string name="bold_z">bold Z</string>
+    <string name="dashed_Z">dashed Z</string>
+    <string name="y">Y</string>
+    <string name="n">N</string>
+    <string name="deep_sleep_val">4 hr</string>
+    <string name="light_sleep_val">5 hr</string>
+    <string name="rem_val">5 hr</string>
+    <string name="sleep_summary">Sleep Summary</string>
 
 </resources>

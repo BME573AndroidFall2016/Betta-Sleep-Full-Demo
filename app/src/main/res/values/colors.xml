@@ -7,4 +7,8 @@
     <color name="colorWebButton">#61D6F9</color>
     <color name="colorSummButton">#886FD4</color>
     <color name="colorInstButton">#FFAF7A</color>
+    <color name="colorYes">#27e833</color>
+    <color name="green">#228b22</color>
+    <color name="colorNo">#d3d3d3</color>
+    <color name="black">#000000</color>
 </resources>

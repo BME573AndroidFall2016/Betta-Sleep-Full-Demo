@@ -44,7 +44,7 @@
             android:layout_marginBottom="50dp"
             android:background="@color/colorWebButton"
             android:text="@string/web"
-            android:onClick="webButtonSelected"/>
+            android:onClick="buttonSelected"/>
 
         <Button
             android:id="@+id/recButton"
@@ -54,7 +54,7 @@
             android:layout_marginStart="5dp"
             android:background="@color/colorRecordButton"
             android:text="@string/record"
-            android:onClick="recButtonSelected"/>
+            android:onClick="buttonSelected"/>
 
         <Button
             android:id="@+id/summButton"
@@ -64,7 +64,7 @@
             android:layout_marginStart="5dp"
             android:background="@color/colorSummButton"
             android:text="@string/summary"
-            android:onClick="summButtonSelected"/>
+            android:onClick="buttonSelected"/>
 
         <Button
             android:id="@+id/instButton"
@@ -74,7 +74,7 @@
             android:layout_marginStart="5dp"
             android:background="@color/colorInstButton"
             android:text="@string/instructions"
-            android:onClick="instButtonSelected"/>
+            android:onClick="buttonSelected"/>
 
     </LinearLayout>
 </LinearLayout>

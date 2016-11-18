@@ -20,7 +20,7 @@ public class SummActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "This is a summary of how you slept last recording session.", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });

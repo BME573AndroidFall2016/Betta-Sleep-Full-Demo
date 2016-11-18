@@ -23,40 +23,37 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setImageResource(R.drawable.fab_icon);
+
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Select a button!", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Device pairing button coming soon!", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
     }
 
-    public void summButtonSelected(View v) {
-        if (R.id.summButton == v.getId()) {
-            Snackbar.make(v, "Summary coming soon!", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show();
+    public void buttonSelected(View v) {
+        if (v.getId() == R.id.webButton) {
+            Intent intent = new Intent(this, WebActivity.class);
+            startActivity(intent);
         }
-    }
-
-    public void instButtonSelected(View v) {
-        if (v.getId() == R.id.instButton) {
+        else if (v.getId() == R.id.recButton) {
+            Intent intent = new Intent(this, RecordActivity.class);
+            startActivity(intent);
+        }
+        else if (R.id.summButton == v.getId()) {
+            Intent intent = new Intent(this, SummActivity.class);
+            startActivity(intent);
+        }
+        else if (v.getId() == R.id.instButton) {
             Intent intent = new Intent(this, InstActivity.class);
             startActivity(intent);
         }
-    }
-
-    public void webButtonSelected(View v) {
-        if (v.getId() == R.id.webButton) {
-                Intent intent = new Intent(this, WebActivity.class);
-                startActivity(intent);
-            }
-    }
-
-    public void recButtonSelected(View v) {
-        if (v.getId() == R.id.recButton) {
-            Intent intent = new Intent(this, RecordActivity.class);
-            startActivity(intent);
+        else {
+            Snackbar.make(v, "Button ID error :(", Snackbar.LENGTH_LONG)
+                    .setAction("Action", null).show();
         }
     }
 

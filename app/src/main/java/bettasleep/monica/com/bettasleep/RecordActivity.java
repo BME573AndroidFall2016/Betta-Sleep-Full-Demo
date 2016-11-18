@@ -1,6 +1,7 @@
 package bettasleep.monica.com.bettasleep;
 
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -42,7 +43,7 @@ public class RecordActivity extends AppCompatActivity {
         mainLayout.addView(mChart);
 
         mChart.setMinimumWidth(1300);
-        mChart.setMinimumHeight(1700);
+        mChart.setMinimumHeight(1300);
 
         mChart.setDescription("");
         mChart.setNoDataTextDescription("No data for the moment");
@@ -72,12 +73,12 @@ public class RecordActivity extends AppCompatActivity {
 
         XAxis xl = mChart.getXAxis();
         xl.setTextColor(Color.BLACK);
-        xl.setDrawGridLines(false);
+        xl.setDrawGridLines(true);
         xl.setAvoidFirstLastClipping(true);
 
         YAxis yl = mChart.getAxisLeft();
         yl.setTextColor(Color.BLACK);
-        yl.setAxisMaxValue(120f);
+        //yl.setAxisMaxValue(120f);
         yl.setDrawGridLines(true);
 
 
@@ -89,7 +90,7 @@ public class RecordActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        // now we're going to simulate real time data addition
+        // simulate real time data addition
 
         new Thread(new Runnable() {
             @Override
@@ -100,7 +101,7 @@ public class RecordActivity extends AppCompatActivity {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            addEntry(); // chart is notified of update in addEntry method
+                            addEntry(); // notify chart about the update in addEntry method
                         }
                     });
 
@@ -116,7 +117,7 @@ public class RecordActivity extends AppCompatActivity {
         }).start();
     }
 
-    // we need to create a method to add an entry to the line chart
+    // create a method to add an entry to the line chart
 
     private void addEntry() {
         LineData data = mChart.getData();
@@ -134,17 +135,16 @@ public class RecordActivity extends AppCompatActivity {
             data.addXValue("");
 //            data.addEntry(new Entry((float) (Math.random() * 110) + 5f, set
 //                    .getEntryCount()), 0);
-
             float datum = fakeData.getData();
             data.addEntry(new Entry((float) datum, set.getEntryCount()), 0);
 
-            // notify chart data have changed
+            // notify chart that the data have changed
             mChart.notifyDataSetChanged();
 
-            // limit number of visible entries
+            // set minimum number of visible entries
             mChart.setVisibleXRangeMinimum(4);
 
-            // but also ACTUALLY limit number of visible entries
+            // but also limit number of visible entries
             mChart.setVisibleXRangeMaximum(100);
 
             // scroll to the last entry
@@ -153,7 +153,7 @@ public class RecordActivity extends AppCompatActivity {
     }
 
 
-    // method to create set
+    // create dataset
     private LineDataSet createSet() {
         LineDataSet set = new LineDataSet(null, "Fake ECG data");
         set.setDrawCubic(true);
@@ -171,5 +171,28 @@ public class RecordActivity extends AppCompatActivity {
         //set.setValueTextSize(10f);
 
         return set;
+    }
+
+    public void buttonSelected(View v) {
+        if (v.getId() == R.id.webButton) {
+            Intent intent = new Intent(this, WebActivity.class);
+            startActivity(intent);
+        }
+        else if (v.getId() == R.id.recButton) {
+            Intent intent = new Intent(this, RecordActivity.class);
+            startActivity(intent);
+        }
+        else if (R.id.summButton == v.getId()) {
+            Intent intent = new Intent(this, SummActivity.class);
+            startActivity(intent);
+        }
+        else if (v.getId() == R.id.instButton) {
+            Intent intent = new Intent(this, InstActivity.class);
+            startActivity(intent);
+        }
+        else {
+            Snackbar.make(v, "Button ID error :(", Snackbar.LENGTH_LONG)
+                    .setAction("Action", null).show();
+        }
     }
 }

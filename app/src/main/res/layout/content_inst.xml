@@ -30,7 +30,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="@string/about"
-        android:textSize="24sp"
+        android:textSize="40sp"
         android:textStyle="bold"
         android:layout_below="@+id/imageView"
         android:layout_marginBottom="10dp"
@@ -47,6 +47,8 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="@string/about_paragraph"
+            android:textSize="20sp"
             android:textAlignment="center" />
+
     </ScrollView>
 </RelativeLayout>
