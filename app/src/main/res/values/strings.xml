@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Betta Sleep</string>
+    <string name="action_settings">Settings</string>
+    <string name="welcome_to_betta_sleep">Welcome to Betta Sleep!</string>
+    <string name="betta_sleep_logo">Betta Sleep Logo</string>
+    <string name="web">WEB</string>
+    <string name="record">RECORD</string>
+    <string name="summary">SUMM.</string>
+    <string name="instructions">INSTR.</string>
+    <string name="title_activity_inst">InstActivity</string>
+    <string name="about_paragraph">Welcome to Betta Sleep! This app records ECG from your corresponding Betta Biosensor, including OSH Park circuit and BLE functionality.</string>
+    <string name="about">About</string>
+    <string name="title_activity_record">RecordActivity</string>
+
+</resources>
