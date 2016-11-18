@@ -11,5 +11,11 @@
     <string name="about_paragraph">Welcome to Betta Sleep! This app records ECG from your corresponding Betta Biosensor, including OSH Park circuit and BLE functionality.</string>
     <string name="about">About</string>
     <string name="title_activity_record">RecordActivity</string>
+    <string name="title_activity_summ">SummActivity</string>
+    <string name="title_activity_web">WebActivity</string>
+    <string name="login">Login</string>
+    <string name="username">username</string>
+    <string name="password">password</string>
+    <string name="enter">Enter</string>
 
 </resources>

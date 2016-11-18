@@ -48,15 +48,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void webButtonSelected(View v) {
         if (v.getId() == R.id.webButton) {
-            Snackbar.make(v, "Website coming soon!", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show();
-        }
+                Intent intent = new Intent(this, WebActivity.class);
+                startActivity(intent);
+            }
     }
 
     public void recButtonSelected(View v) {
         if (v.getId() == R.id.recButton) {
-//            Snackbar.make(v, "Record!", Snackbar.LENGTH_LONG)
-//                    .setAction("Action", null).show();
             Intent intent = new Intent(this, RecordActivity.class);
             startActivity(intent);
         }

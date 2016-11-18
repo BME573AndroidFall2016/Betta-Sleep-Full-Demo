@@ -36,6 +36,24 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="bettasleep.monica.com.bettasleep.MainActivity" />
         </activity>
+        <activity
+            android:name=".SummActivity"
+            android:label="@string/title_activity_summ"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="bettasleep.monica.com.bettasleep.MainActivity" />
+        </activity>
+        <activity
+            android:name=".WebActivity"
+            android:label="@string/title_activity_web"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="bettasleep.monica.com.bettasleep.MainActivity" />
+        </activity>
     </application>
 
 </manifest>
