@@ -22,11 +22,14 @@ import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.utils.ColorTemplate;
 
+import static bettasleep.monica.com.bettasleep.R.id.fab;
+
 public class RecordActivity extends AppCompatActivity {
 
     private RelativeLayout mainLayout;
     private LineChart mChart;
     FakeDataSimple fakeData = new FakeDataSimple();
+    int fab_counter = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,18 +88,37 @@ public class RecordActivity extends AppCompatActivity {
         YAxis yl2 = mChart.getAxisRight();
         yl2.setEnabled(false);
 
+        final FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setImageResource(R.drawable.record_icon);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                Snackbar.make(view, "Will record", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+                fab_counter++;
+                if (fab_counter%2==1) {
+                    onRecButtonClicked();
+                    fab.setImageResource(R.drawable.pause_icon);
+                }
+                else {
+                    fab.setImageResource(R.drawable.record_icon);
+                }
+            }
+        });
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        // simulate real time data addition
+    }
 
+    void onRecButtonClicked(){
+        // simulate real time data addition
         new Thread(new Runnable() {
             @Override
             public void run() {
                 // add 100 entries
-                float len = new FakeDataSimple().getLength();
+                float len = fakeData.getLength();
                 for (int i = 0; i < len; i++) {
                     runOnUiThread(new Runnable() {
                         @Override
@@ -105,20 +127,19 @@ public class RecordActivity extends AppCompatActivity {
                         }
                     });
 
-                    // pause between adds
+                    // pause between datum additions
                     try {
                         Thread.sleep(100);
                     } catch (InterruptedException e) {
-                        // manage error ...
-
+                        break;
                     }
                 }
             }
         }).start();
+
     }
 
-    // create a method to add an entry to the line chart
-
+    // add an entry to the line chart
     private void addEntry() {
         LineData data = mChart.getData();
 

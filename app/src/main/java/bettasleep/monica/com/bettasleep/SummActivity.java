@@ -17,6 +17,7 @@ public class SummActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setImageResource(R.drawable.question_icon);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
