@@ -103,6 +103,10 @@ public class RecordActivity extends AppCompatActivity {
                 else {
                     fab.setImageResource(R.drawable.record_icon);
                 }
+
+                if (fab_counter%2000==0) {
+                    int HR = getHeartRate(mChart);
+                }
             }
         });
     }
@@ -193,6 +197,15 @@ public class RecordActivity extends AppCompatActivity {
 
         return set;
     }
+
+    private int getHeartRate(LineChart chart) {
+        LineData data = chart.getData();
+
+        float points = data.getXValMaximumLength();
+        float minutes = points/2000;
+        //return peakCount/minutes;
+        return 1;
+    };
 
     public void buttonSelected(View v) {
         if (v.getId() == R.id.webButton) {

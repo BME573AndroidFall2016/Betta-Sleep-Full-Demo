@@ -33,48 +33,53 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="50dp"
         android:gravity="bottom"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        >
 
         <Button
             android:id="@+id/webButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
+            android:layout_marginBottom="25dp"
             android:background="@color/colorWebButton"
             android:text="@string/web"
-            android:onClick="buttonSelected"/>
+            android:onClick="buttonSelected"
+            style="?android:attr/buttonBarStyle"/>
 
         <Button
             android:id="@+id/recButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
+            android:layout_marginBottom="25dp"
             android:layout_marginStart="5dp"
             android:background="@color/colorRecordButton"
             android:text="@string/record"
-            android:onClick="buttonSelected"/>
+            android:onClick="buttonSelected"
+            style="?android:attr/buttonBarStyle"/>
 
         <Button
             android:id="@+id/summButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
+            android:layout_marginBottom="25dp"
             android:layout_marginStart="5dp"
             android:background="@color/colorSummButton"
             android:text="@string/summary"
-            android:onClick="buttonSelected"/>
+            android:onClick="buttonSelected"
+            style="?android:attr/buttonBarStyle"/>
 
         <Button
             android:id="@+id/instButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
+            android:layout_marginBottom="25dp"
             android:layout_marginStart="5dp"
             android:background="@color/colorInstButton"
             android:text="@string/instructions"
-            android:onClick="buttonSelected"/>
+            android:onClick="buttonSelected"
+            style="?android:attr/buttonBarStyle"/>
 
     </LinearLayout>
 </LinearLayout>

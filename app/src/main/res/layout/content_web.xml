@@ -50,12 +50,14 @@
             android:text="@string/username" />
 
         <EditText
-            android:id="@+id/usernameField"
+            android:labelFor="@+id/usernameField"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
-            android:inputType="textPersonName" />
+            android:layout_marginStart="20dp"
+            android:inputType="textPersonName"
+            tools:ignore="LabelFor" />
     </LinearLayout>
 
 
@@ -74,12 +76,14 @@
             android:text="@string/password" />
 
         <EditText
-            android:id="@+id/pwordField"
+            android:labelFor="@+id/pwordField"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
-            android:inputType="textPassword" />
+            android:layout_marginStart="20dp"
+            android:inputType="textPassword"
+            tools:ignore="LabelFor" />
     </LinearLayout>
 
     <Button
