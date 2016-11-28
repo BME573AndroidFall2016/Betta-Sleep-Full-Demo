@@ -26,7 +26,6 @@ import static bettasleep.monica.com.bettasleep.R.id.fab;
 
 public class RecordActivity extends AppCompatActivity {
 
-    private RelativeLayout mainLayout;
     private LineChart mChart;
     FakeDataSimple fakeData = new FakeDataSimple();
     int fab_counter = 0;
@@ -38,7 +37,7 @@ public class RecordActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        mainLayout = (RelativeLayout) findViewById(R.id.mainLayout);
+        RelativeLayout mainLayout = (RelativeLayout) findViewById(R.id.mainLayout);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -96,15 +95,14 @@ public class RecordActivity extends AppCompatActivity {
 //                Snackbar.make(view, "Will record", Snackbar.LENGTH_LONG)
 //                        .setAction("Action", null).show();
                 fab_counter++;
-                if (fab_counter%2==1) {
+                if (fab_counter % 2 == 1) {
                     onRecButtonClicked();
                     fab.setImageResource(R.drawable.pause_icon);
-                }
-                else {
+                } else {
                     fab.setImageResource(R.drawable.record_icon);
                 }
 
-                if (fab_counter%2000==0) {
+                if (fab_counter % 2000 == 0) {
                     int HR = getHeartRate(mChart);
                 }
             }
@@ -116,7 +114,7 @@ public class RecordActivity extends AppCompatActivity {
         super.onResume();
     }
 
-    void onRecButtonClicked(){
+    void onRecButtonClicked() {
         // simulate real time data addition
         new Thread(new Runnable() {
             @Override
@@ -202,29 +200,25 @@ public class RecordActivity extends AppCompatActivity {
         LineData data = chart.getData();
 
         float points = data.getXValMaximumLength();
-        float minutes = points/2000;
+        float minutes = points / 2000;
         //return peakCount/minutes;
         return 1;
-    };
+    }
 
     public void buttonSelected(View v) {
         if (v.getId() == R.id.webButton) {
             Intent intent = new Intent(this, WebActivity.class);
             startActivity(intent);
-        }
-        else if (v.getId() == R.id.recButton) {
+        } else if (v.getId() == R.id.recButton) {
             Intent intent = new Intent(this, RecordActivity.class);
             startActivity(intent);
-        }
-        else if (R.id.summButton == v.getId()) {
+        } else if (R.id.summButton == v.getId()) {
             Intent intent = new Intent(this, SummActivity.class);
             startActivity(intent);
-        }
-        else if (v.getId() == R.id.instButton) {
+        } else if (v.getId() == R.id.instButton) {
             Intent intent = new Intent(this, InstActivity.class);
             startActivity(intent);
-        }
-        else {
+        } else {
             Snackbar.make(v, "Button ID error :(", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show();
         }

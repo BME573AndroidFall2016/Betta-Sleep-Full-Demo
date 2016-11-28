@@ -13,7 +13,6 @@
     tools:context="bettasleep.monica.com.bettasleep.WebActivity"
     tools:showIn="@layout/activity_web">
 
-
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="300dp"
@@ -50,13 +49,13 @@
             android:text="@string/username" />
 
         <EditText
-            android:labelFor="@+id/usernameField"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
             android:layout_weight="1"
             android:ems="10"
-            android:layout_marginStart="20dp"
             android:inputType="textPersonName"
+            android:labelFor="@+id/usernameField"
             tools:ignore="LabelFor" />
     </LinearLayout>
 
@@ -76,13 +75,13 @@
             android:text="@string/password" />
 
         <EditText
-            android:labelFor="@+id/pwordField"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
             android:layout_weight="1"
             android:ems="10"
-            android:layout_marginStart="20dp"
             android:inputType="textPassword"
+            android:labelFor="@+id/pwordField"
             tools:ignore="LabelFor" />
     </LinearLayout>
 
@@ -90,7 +89,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/pwordLayout"
-        android:text="@string/enter"
         android:layout_centerInParent="true"
-        android:onClick="onLoginEnterSelected"/>
+        android:onClick="onLoginEnterSelected"
+        android:text="@string/enter" />
 </RelativeLayout>
