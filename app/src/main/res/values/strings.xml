@@ -37,5 +37,7 @@
     <string name="light_sleep_val">5 hr</string>
     <string name="rem_val">5 hr</string>
     <string name="sleep_summary">Sleep Summary</string>
+    <string name="title_activity_ble_scanner">BleScanner</string>
+    <string name="title_activity_ble_connect">BleConnect</string>
 
 </resources>

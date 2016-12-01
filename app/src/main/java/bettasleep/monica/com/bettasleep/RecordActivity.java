@@ -28,6 +28,7 @@ public class RecordActivity extends AppCompatActivity {
 
     private LineChart mChart;
     FakeDataSimple fakeData = new FakeDataSimple();
+    BLEDataConverter converter = new BLEDataConverter();
     int fab_counter = 0;
 
     @Override
@@ -154,12 +155,24 @@ public class RecordActivity extends AppCompatActivity {
                 data.addDataSet(set);
             }
 
-            // add a new random value
+            // add a new value
             data.addXValue("");
-//            data.addEntry(new Entry((float) (Math.random() * 110) + 5f, set
-//                    .getEntryCount()), 0);
-            float datum = fakeData.getData();
-            data.addEntry(new Entry((float) datum, set.getEntryCount()), 0);
+            //float datum = fakeData.getData();
+
+            // BRYCE - THIS IS WHERE WE START. HOW DO WE GET DATA THAT WILL GO IN byte[20] ?
+            byte input_bytes[] = new byte[20];
+            int j = 0;
+            for (int i = 0; i < 20; i += 2) {
+                input_bytes[j++] = (byte) input_bytes[i];
+            }
+
+            float output[] = converter.convert(input_bytes);
+
+            for (int i = 0; i < 20; i++) {
+                data.addEntry(new Entry((float) output[i], set.getEntryCount()), 0);
+            }
+
+            // BRYCE - THIS IS WHERE WE END
 
             // notify chart that the data have changed
             mChart.notifyDataSetChanged();
